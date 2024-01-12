@@ -18,6 +18,9 @@ const Board = () => {
   const [isXNext, setIsXNext] = useState();
   const handleClick = (i) => {
     const newSquare = [...square];
+    if (square[i]) {
+      return;
+    }
     if (isXNext) {
       newSquare[i] = "O";
     } else {
