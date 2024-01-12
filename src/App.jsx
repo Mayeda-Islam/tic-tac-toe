@@ -1,9 +1,31 @@
-const App = () => {
+const Square = () => {
   return (
-    <div>
-      <h1 className="text-5xl">hello tic tac toe</h1>
-    </div>
+    <button className="bg-white border border-gray-800 h-12 w-12 m-1 text-3xl">
+      x
+    </button>
   );
 };
 
-export default App;
+const Board = () => {
+  return (
+    <>
+      <div>
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div>
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div>
+        <Square />
+        <Square />
+        <Square />
+      </div>
+    </>
+  );
+};
+
+export default Board;
