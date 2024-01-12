@@ -3,7 +3,6 @@
 import { useState } from "react";
 
 const Square = ({ value, onSquareClick }) => {
-  console.log(value);
   return (
     <button
       onClick={onSquareClick}
@@ -16,11 +15,16 @@ const Square = ({ value, onSquareClick }) => {
 
 const Board = () => {
   const [square, setSquare] = useState(Array(9).fill(null));
-  const handleClick = (value) => {
-    const newSqares = [...square];
-    newSqares[value] = "X";
-    console.log(newSqares);
-    setSquare(newSqares);
+  const [isXNext, setIsXNext] = useState();
+  const handleClick = (i) => {
+    const newSquare = [...square];
+    if (isXNext) {
+      newSquare[i] = "O";
+    } else {
+      newSquare[i] = "X";
+    }
+    setIsXNext(!isXNext);
+    setSquare(newSquare);
   };
   return (
     <>
